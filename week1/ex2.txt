@@ -1,0 +1,47 @@
+1  ls
+    2  pwd
+    3  mkdir example
+    4  cd example
+    5  pwd
+    6  cd /home/nurdaulet
+    7  pwd
+    8  ls
+    9  cd example
+   10  ls /usr/bin | grep gcc | sort -r > ~/week1/ex1.txt
+   11  cd..
+   12  cd ..
+   13  pwd
+   14  mkdir ~/week1
+   15  ls
+   16  cd ~/week1
+   17  ls /usr/bin | grep gcc | sort -r > ~/week1/ex1.txt
+   18  ls
+   19  history > ~/week1/ex2.txt
+   20  ls
+   21  cd ex1.txt
+   22  open ex1.txt
+   23  gedit ex1.txt
+   24  sudo apt install gedit
+   25  gedit ex1.txt
+   26  bash ex1.txt
+   27  ls
+   28  cat ex1.txt
+   29  cat ex2.txt
+   30  cd /usr/bin
+   31  ls
+   32  cd /home/nurdaulet/week1
+   33  rm ex1.txt
+   34  ls
+   35  cd /usr/bin
+   36  ls /usr/bin | grep ntfs | sort -r > ~/week1/ex1.txt
+   37  cd /home/nurdaulet/week1
+   38  ls
+   39  cat ex1.txt
+   40  rm ex2.txt
+   41  ls
+   42  history > ~/week1/ex2.txt
+   43  bash ex2.txt
+   44  cat ex2.txt
+   45  ls
+   46  cat ex2.txt
+   47  history > ~/week1/ex2.txt
