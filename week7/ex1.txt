@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+   2645	    592	     96	   3245	    cad	ex1
