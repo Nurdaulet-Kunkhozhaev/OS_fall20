@@ -1,0 +1,5 @@
+instructions have no output
+
+066 = 110 110 000 = rw- rw- --- (read-write for user, group and no perms for others)
+775 = 111 111 101 = rwx rwx r-x (read-write-execute for user, group and read-execute for others)
+777 = 111 111 111 = rwx rwx rwx (read-write-execute for user, group, others)
