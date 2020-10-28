@@ -1,0 +1,8 @@
+Output of 1st program:
+Hello
+Hello
+Output of 2nd program:
+Hello
+
+The difference is that in 1st case when process is forked, both processes have "Hello" in buffer.
+In 2nd case the buffer is flushed before the fork because of "\n" and child process has empty buffer.
