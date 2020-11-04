@@ -1,0 +1,60 @@
+For experiment I created 2 files of sizes 4.0K and 980K
+
+RESULTS: Obviously, the bigger file is, the longer it takes to copy content.
+Also bigger buffer size specified by -DBUF_SIZE increases copy speed a lot. 
+But including O_SYNC flag slows down the process because OS guarantees 
+that the write call will not return before all data has been 
+transferred to the disk. And when we have a lot of write calls (especially 
+if buffer size is small), copying takes way too much time
+
+1) For -DBUF_SIZE=1 I get
+
+real    0m0.054s
+user    0m0.003s
+sys 0m0.016s
+
+for small 4.0K file and
+
+real    0m37.682s
+user    0m1.050s
+sys 0m6.786s
+
+for bigger 980K file.
+
+2) But if I put -DBUF_SIZE=1000 I get 
+
+real    0m0.008s
+user    0m0.001s
+sys 0m0.000s
+
+and
+
+real    0m0.016s
+user    0m0.000s
+sys 0m0.011s
+
+for small and big files respectfully (copying was faster). 
+
+3) Now I include O_SYNC flag and -DBUF_SIZE=1:
+
+real    0m12.286s
+user    0m0.000s
+sys 0m0.316s
+
+for small file and considerably more time for big file (it didn't end in 8
+minutes).
+
+4) Finally, I used O_SYNC with -DBUF_SIZE=1000:
+
+real    0m0.020s
+user    0m0.002s
+sys 0m0.000s
+
+and 
+
+real    0m11.182s
+user    0m0.004s
+sys 0m0.411s
+
+which is longer than without O_SYNC but faster than with O_SYNC flag and 1 byte 
+buffer.
